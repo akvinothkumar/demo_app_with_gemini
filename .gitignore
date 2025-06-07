@@ -1,0 +1,10 @@
+# Ignore environment variable files
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment folder
+venv_for_my_demo_app_with_gemini/

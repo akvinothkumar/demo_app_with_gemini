@@ -1,0 +1,97 @@
+[
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "google.generativeai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "google.generativeai",
+        "description": "google.generativeai",
+        "detail": "google.generativeai",
+        "documentation": {}
+    },
+    {
+        "label": "BaseHTTPRequestHandler",
+        "importPath": "http.server",
+        "description": "http.server",
+        "isExtraImport": true,
+        "detail": "http.server",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPServer",
+        "importPath": "http.server",
+        "description": "http.server",
+        "isExtraImport": true,
+        "detail": "http.server",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "markdown",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "markdown",
+        "description": "markdown",
+        "detail": "markdown",
+        "documentation": {}
+    },
+    {
+        "label": "GEMINI_API_KEY",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "GEMINI_API_KEY = os.getenv(\"GEMINI_API_KEY\")\nif not GEMINI_API_KEY:\n    raise ValueError(\"Can't find the GEMINI_API_KEY in environment variables.\")\ngenai.configure(api_key=GEMINI_API_KEY)\n# to_check_the_existing_models_to_serve\n# for m in genai.list_models():\n#     print(\n#         f\"Name: {m.name}, supports generation: {'generateContent' in m.supported_generation_methods}\"\n#     )\nmodel = genai.GenerativeModel(\"gemini-1.5-flash\")",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "model = genai.GenerativeModel(\"gemini-1.5-flash\")",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "PromptFormHandler",
+        "kind": 6,
+        "importPath": "my_app",
+        "description": "my_app",
+        "peekOfCode": "class PromptFormHandler(BaseHTTPRequestHandler):\n    def markdown_to_html(self, text):\n        return markdown.markdown(text)\n    def do_GET(self):\n        self.send_response(200)\n        self.end_headers()\n        with open(\"index.html\", \"r\") as f:\n            html = f.read()\n        self.wfile.write(html.encode())\n    def do_POST(self):",
+        "detail": "my_app",
+        "documentation": {}
+    }
+]
